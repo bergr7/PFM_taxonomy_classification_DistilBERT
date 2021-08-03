@@ -1,20 +1,19 @@
 
-# Despliegue con `TorchServe`
+# Deployment with `TorchServe`
 
-## Objetivo
+## Objetive
 _______
-Implementar el despliegue del clasificador de taxonomías con la herramienta `TorchServe`.
+Taxonomy classifier deployment with `TorchServe`.
 
-`TorchServe` es una herramienta desarrollada por Facebook y AWS sencilla y fácil de usar para desplegar modelos de
-`Pytorch` en producción.
+`TorchServe` is a simple and easy-to-use tool developed by Facebook and AWS to deploy `Pytorch` models in production.
 
-## Modelo
+## Model
 ________
-Los pesos del modelo entrenado pueden descargarse en el siguiente enlace:
+The model weigths can be downloade at the following link:
 
 https://drive.google.com/drive/folders/1LOnXoH2iCOBtD9of17uqa4PTFTQ2h9eX?usp=sharing
 
-## Implementación
+## Deployment
 _________
 
 ``````
@@ -38,16 +37,16 @@ curl -v -X PUT "http://localhost:8081/models/taxonomyClassifier?min_worker=4"
 
 ``````
 
-## Resultados
+## Results
 _________
-- Inferencia:
+- Inference:
 ````
 # inference
 curl http://localhost:8080/predictions/taxonomyClassifier -T sample_text.txt
 ➜ Taxonomy 17
 ````
 
-- Extracto de logs durante inferencia
+- Logs during inference
 ````
 2021-06-24 21:15:37,630 [INFO ] W-9000-taxonomyClassifier_2.0-stdout MODEL_LOG - Esto es un ejemplo de prueba
 2021-06-24 21:15:37,631 [INFO ] W-9000-taxonomyClassifier_2.0-stdout MODEL_LOG - Received texts: ['Esto es un ejemplo de prueba']
@@ -59,14 +58,13 @@ classification model [0.0053795091807842255, 0.00020787259563803673, 0.011930802
 2021-06-24 21:15:48,499 [INFO ] W-9000-taxonomyClassifier_2.0-stdout MODEL_LOG - ['Taxonomy 173']
 ````
 
-## Entorno Virtual
+## Environment
 _______
-El despliegue se desarrolló en un entorno local. De todas formas, el desarrollo es válido para el despliegue en una
-instancia en la nube como puede ser una EC2 de AWS.
+The deployment was done in a local environment. However, the process is valid for deployment in a cloud instance such as an AWS EC2
+instance.
 
-Para el proyecto se crearon dos entornos virtuales a partir de la distribución anaconda, uno para el desarrollo y 
-otro para el despliegue con `TorchServe`. Para la reproducción de resultados, el entorno virtual se puede instalar
-a partir de las siguientes líneas de código:
+Two virtual environments were created for the project utilizing the anaconda distribution, one for development and one for deployment with `TorchServe`.
+To reproduce the results, the virtual environment can be installed from the following lines of code:
 
 - macOS:
 
