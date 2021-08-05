@@ -10,7 +10,7 @@ The master's thesis can be found in the following link (Note that it is written 
 
 https://drive.google.com/drive/folders/1hmu_BwEQtaYrqGJsh96pzNNgFhmuNdzG?usp=sharing
 
-## Objetive
+## Objective
 _______
 The objective of this master's thesis is to build a taxonomy classifier, i.e., a model that processes the description of an event using natural language processing techniques and classifies it by taxonomy sub-taxonomy.
 

@@ -1,7 +1,7 @@
 
 # Deployment with `TorchServe`
 
-## Objetive
+## Objective
 _______
 Taxonomy classifier deployment with `TorchServe`.
 
